@@ -205,6 +205,28 @@ public class DemoTest {
 		int defaultMaxCalories = maxCalories.orElse(1); // 如果没有最大值的话，显式提供一个默认的最大值
 		System.out.println(defaultMaxCalories);
 		
+		// 数值范围
+		IntStream evenNumbers = IntStream.range(1, 100) // 表示[1, 100)
+										 .filter(n -> n % 2 == 0);// 一个1到100的偶数流
+		System.out.println(evenNumbers.count());
+		
+		// 由值创建流
+		Stream<String> strStream = Stream.of("java8", "in", "action");
+		strStream.map(String::toUpperCase).forEach(System.out::println);
+		
+		// 由数组创建流
+		int[] arrNumbers = {1,2,3,4,5,6};
+		int arrSum = Arrays.stream(arrNumbers).sum();
+		System.out.println(arrSum);
+		
+		// 无限流
+		// 1. 迭代
+		Stream.iterate(0, n -> n + 2).forEach(System.out::println);
+		Stream.iterate(0, n -> n < 100, n -> n + 2).forEach(System.out::println);
+		// 2. 生成
+		Stream.generate(Math::random).forEach(System.out::println);
+		
+		
 	}
 	
 }
