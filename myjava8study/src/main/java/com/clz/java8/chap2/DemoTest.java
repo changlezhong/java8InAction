@@ -12,7 +12,7 @@ import java.util.function.Supplier;
 
 import com.clz.java8.chap1.Apple;
 
-public class UserLambda {
+public class DemoTest {
 
 	// 测试数据
 	public static List<Apple> inventory = Arrays.asList(new Apple(80,"green"), new Apple(155, "green"), new Apple(120, "red"));
